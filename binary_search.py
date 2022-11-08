@@ -50,3 +50,24 @@ n -> number of elements
 if we have list of 240,000 elemnts then log 240,000 -> 18. It will takes 18 steps
 in worst to find our element.
 """
+
+
+"""
+Binary Search using recursion
+"""
+
+def binary_search(arr, low, high, element):
+    if low > high:
+        return None
+    else:
+        mid = (low + high) // 2
+        if arr[mid] == element:
+            return mid
+        elif arr[mid] > high:
+            return binary_search(arr, low, mid-1, element)
+        else:
+            return binary_search(arr, mid+1, high, element)
+
+
+            
+print(binary_search([1,2,3,4,5], 0, 4, 4))
