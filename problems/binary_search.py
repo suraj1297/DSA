@@ -120,3 +120,27 @@ def greedy_approach(arr, total):
     return -1
 
 print(binary_approach([20,40,60,80,90,120,240], 210))
+
+
+"""
+Find the day when one should buy and sell shares for max profit.
+In the array the index represents the day and the value price of share
+on that day. First one should buy and then sell.
+
+"""
+
+def maxProfit(prices):
+
+    # T(n) = O(n)
+    min_price = float("inf")
+    max_profit = 0
+
+    for i in range(len(prices)):
+        if prices[i] < min_price:
+            min_price = prices[i]
+        elif prices[i] - min_price > max_profit:
+            max_profit = prices[i] - min_price
+
+    return max_profit
+
+print(maxProfit([7,1,3,4,2,6,5]))
