@@ -102,7 +102,7 @@ def binary_approach(arr, total):
 
 print(binary_approach([20,40,60,80,90,120,240], 210))
 
-""" Greedy Approach """
+""" Greedy Approach or Two Pointer Approach"""
 
 def greedy_approach(arr, total):
     # T(n) = O(n)
