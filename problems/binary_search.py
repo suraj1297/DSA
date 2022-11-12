@@ -70,3 +70,53 @@ def findInfinite2(arr):
 
 print(findInfinite2([1,4,2,9,8,3,6,7,9,10,11,"infinite","infinite","infinite","infinite","infinite","infinite"]))
 
+"""
+Finding pair of numbers whose sum is equal to given number.
+
+Approach 1: Binary Approach
+
+Approach 2: Greedy Approach 
+
+"""
+
+"""Binary Approach"""
+
+def binary_approach(arr, total):
+    # T(n) = O(nlogn)
+    for i, a in enumerate(arr): # n
+
+        # finding b using binary approach. log(n)
+        b = total - a
+        low = 0
+        high = len(arr) - 1
+        while(low <= high):
+            mid = low + (high - low) //2
+
+            if arr[mid] == b:
+                return [i,mid]
+            elif arr[mid] > b:
+                high = mid - 1
+            else:
+                low = mid + 1
+    return -1
+
+print(binary_approach([20,40,60,80,90,120,240], 210))
+
+""" Greedy Approach """
+
+def greedy_approach(arr, total):
+    # T(n) = O(n)
+    i = 0
+    j = len(arr) - 1
+    while(i<=j):
+
+        if (arr[i] + arr[j]) > total:
+            j -+ 1
+        elif (arr[i] + arr[j]) < total:
+            i += 1
+        else:
+            return [i,j]
+
+    return -1
+
+print(binary_approach([20,40,60,80,90,120,240], 210))
