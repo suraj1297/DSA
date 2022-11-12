@@ -29,3 +29,44 @@ def findInfinite(arr):
 print(findInfinite([1,4,2,9,8,3,6,7,"infinite","infinite","infinite","infinite","infinite","infinite"]))
 
 
+"""
+Now the last index we dont know and it lies at infinite.
+Here we will jump index exponentially so that we can find the infinite value faster.
+
+"""
+
+
+def findInfinite2(arr):
+
+    start = 0
+    end = 1
+
+    count = 0
+
+    while(count < 999999999999999999999):
+        count+=1
+
+        if arr[end] == "infinite":
+            break
+        else:
+            temp = end
+            end = start * 2
+            start = temp
+
+    
+    while start<=end:
+
+        mid = start + (end-start)//2
+
+        if start == end and arr[start] == "infinite":
+            return start
+
+        if arr[mid] != "infinite":
+            start = mid + 1
+        else:
+            end = mid
+
+    return -1
+
+print(findInfinite2([1,4,2,9,8,3,6,7,9,10,11,"infinite","infinite","infinite","infinite","infinite","infinite"]))
+
