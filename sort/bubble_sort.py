@@ -1,22 +1,14 @@
 def bubble_sort(arr):
 
     # T(n) = O(n^2)
-
-    swap = True
-    count = 0
-   
+  
     for i in range(len(arr)):
-        local_swap = False
-        if not swap:
-            return arr
         for j in range(len(arr) -i - 1):
             if arr[j] > arr[j+1]:
                 temp = arr[j]
                 arr[j] = arr[j+1]
                 arr[j+1] = temp
-                local_swap = True
-        swap = local_swap
-        count+=1
+    return arr
 
 print(bubble_sort([9,3,2,6,2])) 
 
