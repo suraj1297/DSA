@@ -5,6 +5,8 @@ def buidlHeap(arr):
     for i in range(startIndex, -1 , -1):
         heapify(arr, i)
 
+    print("HEAP: ",arr)
+
 def heapify(arr, i):
     smallest = arr[i]
     swap = None
@@ -22,12 +24,12 @@ def heapify(arr, i):
         if swap == "lc":
             arr[lc] = arr[i]
             arr[i] = smallest
-            print(arr[i], arr[lc], arr[rc])
+            # print(arr[i], arr[lc], arr[rc])
             heapify(arr, lc)
         elif swap == "rc":
             arr[rc] = arr[i]
             arr[i] = smallest
-            print(arr[i], arr[lc], arr[rc])
+            # print(arr[i], arr[lc], arr[rc])
             heapify(arr, rc)
 
         
