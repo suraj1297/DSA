@@ -27,11 +27,13 @@ print(numberOfItems([1,2,3,4,5]))
 Maximum number in a list using D&C
 """
 
-def max(arr):
-    if len(arr) == 1:
-        return arr[0]
+def max(arr, i):
+    if len(arr) == 2:
+        return  arr[0] if arr[0] > arr[1] else arr[1]
     else:
-        return 1
+        return arr[i] if arr[i] > max(arr[i+1:], i+1) else max(arr[i+1:], i+1)
+
+print(max([1,2,3,44,5], 0))
 
 
 """
