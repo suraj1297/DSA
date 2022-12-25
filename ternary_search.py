@@ -13,8 +13,8 @@ def ternary_search(arr, key):
     high = len(arr) - 1
 
     while low<=high:
-        mid1 = low + (high - low) // 2
-        mid2 = high - (high - low) // 2
+        mid1 = low + (high - low) // 3
+        mid2 = high - (high - low) // 3
 
         if arr[mid1] == key:
             return mid1
@@ -41,8 +41,8 @@ def ternary_search2(arr, low, high, key):
             return high 
         return -1
     else:
-        mid1 = low + (high - low)//2
-        mid2 = high - (high - low)//2
+        mid1 = low + (high - low)//3
+        mid2 = high - (high - low)//3
 
         if arr[mid1] == key:
             return mid1
