@@ -7,7 +7,7 @@ def heapify(arr):
     for i in range(index+1, -1, -1):
         check(arr, i)
 
-    print(arr)
+    return arr
 
 
 def check(arr, i):
@@ -40,4 +40,7 @@ def check(arr, i):
 
 
 
-heapify([145,40,25,65,12,48,18,20,30,35,60,70,75, 11])
+# print(heapify([145,40,25,65,12,48,18,20,30,35,60,70,75, 11]))
+
+if __name__ == "__main__":
+    print(heapify([145,40,25,65,12,48,18,20,30,35,60,70,75, 11]))
