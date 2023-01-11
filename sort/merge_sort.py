@@ -1,6 +1,4 @@
 def merge(sub1, sub2):
-    print("SUB1", sub1)
-    print("SUB2", sub2)
     a = 0
     b = 0
     result = []
