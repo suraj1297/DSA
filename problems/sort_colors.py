@@ -21,7 +21,19 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
 
-        nums = self.quickSort(nums)
-        print(nums)
+        i = curr = 0
+        j = len(nums) -1
+
+        while curr <= j:
+            if nums[curr] == 0:
+                nums[i], nums[curr] = nums[curr], nums[i]
+                i+=1
+                curr+=1
+            elif nums[curr] == 2:
+                nums[j], nums[curr] = nums[curr], nums[j]
+                j-=1
+            else:
+                cur+=1
+                
 
 Solution().sortColors([2,0,2,1,1,0])
